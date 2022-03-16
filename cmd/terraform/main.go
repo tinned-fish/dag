@@ -3,9 +3,10 @@ package main
 /*
 import (
 	"fmt"
-	"github.com/hashicorp/terraform/dag"
 	"math"
 	"time"
+
+	"github.com/hashicorp/terraform/dag"
 )
 
 type largeVertex struct {

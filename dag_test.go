@@ -2,9 +2,10 @@ package dag
 
 import (
 	"fmt"
-	"github.com/go-test/deep"
 	"strconv"
 	"testing"
+
+	"github.com/go-test/deep"
 )
 
 type iVertex struct{ value int }
@@ -887,7 +888,7 @@ func TestDAG_GetOrderedAncestors(t *testing.T) {
 		t.Errorf("GetOrderedAncestors(v1) = %d, want 0", len(desc))
 	}
 	if desc, _ := dag.GetOrderedAncestors(v4); !equal(desc, []string{v2, v1}) {
-		t.Errorf("GetOrderedAncestors(v4) = %v, want %v", desc, []interface{}{v2, v1})
+		t.Errorf("GetOrderedAncestors(v4) = %v, want %v", desc, []Vertex{v2, v1})
 	}
 
 	// nil
@@ -1151,7 +1152,7 @@ func ExampleDAG_AncestorsWalker() {
 	_ = dag.AddEdge(v2, v4)
 	_ = dag.AddEdge(v4, v5)
 
-	var ancestors []interface{}
+	var ancestors []Vertex
 	vertices, signal, _ := dag.AncestorsWalker(v5)
 	for v := range vertices {
 		ancestors = append(ancestors, v)
@@ -1197,7 +1198,7 @@ func TestLarge(t *testing.T) {
 	}
 
 	/*
-		var childList []interface{}
+		var childList []Vertex
 		for x := range children {
 			childList = append(childList, x)
 		}

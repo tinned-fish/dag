@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/heimdalr/dag"
 	"math"
 	"time"
+
+	"github.com/heimdalr/dag"
 )
 
 type largeVertex struct {

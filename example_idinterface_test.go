@@ -2,6 +2,7 @@ package dag_test
 
 import (
 	"fmt"
+
 	"github.com/heimdalr/dag"
 )
 
